@@ -1,0 +1,11 @@
+services:
+  protect-chime:
+    build: .
+    image: local/protect-chime:0.7.2
+    container_name: protect-chime
+    restart: unless-stopped
+    network_mode: host
+    environment:
+      TZ: Europe/Berlin
+    volumes:
+      - ./data:/data
